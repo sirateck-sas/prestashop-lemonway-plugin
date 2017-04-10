@@ -356,15 +356,14 @@ class LemonWayKit
             "Cache-Control: no-cache",
             "Pragma: no-cache",
             'SOAPAction: "Service_mb_xml/' . $methodName . '"',
-            "Content-length: " . Tools::strlen($xml_soap)
+            "Content-length: " . strlen($xml_soap)
         );
-        
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $accessConfig['directKitUrl']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-        curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $xml_soap);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, !$accessConfig['isTestMode']);
@@ -466,7 +465,7 @@ class LemonWayKit
                         "src=\"" . $root . "$1\"",
                         $server_output
                     );
-                    
+
                     return $server_output;
                 default:
                     throw new Exception($returnCode);

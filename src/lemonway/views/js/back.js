@@ -23,19 +23,16 @@
  * International Registered Trademark & Property of PrestaShop SA
 */
 
-$(function() {
-	
-	var iban_select = $('#id_lw_iban');
-	var iban_hidden = $('#iban');
-	if(typeof iban_select != 'undefined')
-	{
-		iban_select.change(function(ev){
-			 
-			 if(typeof iban_hidden != 'undefined'){
-				 iban_hidden.val(iban_select.find("option:selected").text());
-			 }
-			 
-		 });
-	}
-	
+$(function()
+{
+    var iban_select = $('#id_lw_iban');
+    var iban_hidden = $('#iban');
+    if (typeof iban_select != 'undefined') {
+        iban_select.change(function(ev)
+        {
+            if (typeof iban_hidden != 'undefined') {
+                iban_hidden.val(iban_select.find("option:selected").text());
+            }
+        });
+    }
 });

@@ -23,11 +23,6 @@
  * International Registered Trademark & Property of PrestaShop SA
 */
 
-/**
- * Don't forget to prefix your containers with your own identifier
- * to avoid any conflicts with others containers.
- */
-
 #content .tab-pane:first-child .panel {
 	border-top-left-radius: 0;
 }
@@ -89,7 +84,7 @@
 	padding-left: 15px;
 }
 
-.Lemonway-content .ul-spaced li {
+.Lemonway-content .ol-spaced li {
 	margin-bottom: 5px;
 }
 

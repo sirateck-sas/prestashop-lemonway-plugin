@@ -33,9 +33,9 @@ class LemonWayConfig
     
     public static function getDirectkitUrl()
     {
-        $url = Configuration::get('LEMONWAY_DIRECTKIT_URL', null);
+        $url = "https://ws.lemonway.fr/mb/lwecommerce/prod/directkitxml/service.asmx";
         if (LemonWayConfig::isTestMode()) {
-            $url = Configuration::get('LEMONWAY_DIRECTKIT_URL_TEST', null);
+            $url = "https://sandbox-api.lemonway.fr/mb/lwecommerce/dev/directkitxml/service.asmx";
         }
 
         return rtrim($url, '/');
@@ -43,9 +43,9 @@ class LemonWayConfig
     
     public static function getWebkitUrl()
     {
-        $url = Configuration::get('LEMONWAY_WEBKIT_URL', null);
+        $url = "https://webkit.lemonway.fr/mb/lwecommerce/prod/";
         if (LemonWayConfig::isTestMode()) {
-            $url = Configuration::get('LEMONWAY_WEBKIT_URL_TEST', null);
+            $url = "https://sandbox-webkit.lemonway.fr/lwecommerce/dev/";
         }
 
         return rtrim($url, '/');
@@ -71,8 +71,8 @@ class LemonWayConfig
         return Configuration::get('LEMONWAY_CSS_URL', null);
     }
     
-    public static function getOneclicEnabled($method)
+    public static function getOneclicEnabled()
     {
-        return Configuration::get('LEMONWAY_' . strtoupper($method) . '_ONECLIC_ENABLED', null);
+        return Configuration::get('LEMONWAY_ONECLIC_ENABLED', null);
     }
 }
